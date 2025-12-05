@@ -27,7 +27,7 @@ const ChatInterface = () => {
 
     try {
       // 2. Backend ko call karo
-      const response = await axios.post('http://localhost:5000/api/chat/message', {
+      const response = await axios.post('https://squad-ai-backend.onrender.com/api/chat/message', {
         message: input
       });
 
