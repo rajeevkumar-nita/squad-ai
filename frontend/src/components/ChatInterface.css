@@ -1,0 +1,243 @@
+/* 
+.chat-container {
+  width: 400px;
+  height: 600px;
+  background-color: #2d2d2d;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.chat-header {
+  background-color: #075e54; 
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #333;
+}
+
+
+.messages-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #00a884;
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #383838;
+  color: #e9edef;
+  border-bottom-left-radius: 2px;
+}
+
+
+.input-area {
+  padding: 15px;
+  background-color: #202020;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background-color: #383838;
+  color: white;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  background-color: #00a884;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #008f6f;
+}
+
+button:disabled {
+  background-color: #555;
+} */
+
+
+
+
+
+
+/* --- Main Container (Responsive) --- */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #0b141a; /* Chat Background */
+  /* Background Image Pattern (Optional - WhatsApp Style) */
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  background-blend-mode: overlay;
+  opacity: 0.95;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+
+  /* DESKTOP/LAPTOP SETTINGS */
+  width: 90%;           /* Screen ka 90% choudai */
+  max-width: 1100px;    /* Bahut bade screen pe zyada na phaile */
+  height: 90vh;         /* Screen ka 90% lumbai */
+  border-radius: 12px;  /* Corners round honge */
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+/* --- Header --- */
+.chat-header {
+  background-color: #202c33;
+  padding: 15px 20px;
+  color: #e9edef;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 1px solid #2f3b44;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Messages Area --- */
+.messages-area {
+  flex: 1;
+  padding: 20px 40px; /* Thoda space badhaya */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Scrollbar Styling */
+.messages-area::-webkit-scrollbar {
+  width: 6px;
+}
+.messages-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+.messages-area::-webkit-scrollbar-thumb {
+  background-color: #374045;
+  border-radius: 3px;
+}
+
+/* --- Chat Bubbles --- */
+.message {
+  max-width: 60%; /* Laptop pe messages zyada wide na ho */
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #005c4b; /* WhatsApp Green */
+  color: white;
+  border-top-right-radius: 0;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #202c33; /* Dark Grey */
+  color: #e9edef;
+  border-top-left-radius: 0;
+}
+
+/* --- Input Area --- */
+.input-area {
+  background-color: #202c33;
+  padding: 15px 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+input {
+  flex: 1;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2a3942;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  background-color: #00a884;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #008f6f;
+  transform: scale(1.05);
+}
+
+/* --- 📱 MOBILE RESPONSIVE (Magic Code) --- */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 100%;       /* Mobile pe full width */
+    height: 100vh;     /* Mobile pe full height */
+    max-width: none;
+    border-radius: 0;  /* Corners sharp */
+    border: none;
+  }
+  
+  .message {
+    max-width: 85%;    /* Mobile pe bubbles bade dikhenge */
+    font-size: 0.95rem;
+  }
+
+  .messages-area {
+    padding: 15px;
+  }
+
+  .input-area {
+    padding: 10px;
+  }
+
+  input {
+    padding: 12px;
+  }
+}
